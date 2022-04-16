@@ -4,7 +4,7 @@ function Home() {
     <div className="bg-black top-0 absolute w-full">
       {/* Hero section */}
       <div
-        className="h-screen  bg-center bg-cover bg-no-repeat flex justify-center items-center p-4 opacity-80 font-serif"
+        className="h-screen  bg-center bg-cover bg-no-repeat flex justify-center items-center px-4 opacity-80 font-serif"
         style={{ backgroundImage: `url(/assets/home_page.png)` }}
       >
         <h1 className="text-4xl font-bold text-white md:text-center">

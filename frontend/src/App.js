@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       {/* Navbar */}
       <div>
-        <nav className="flex w-full min-h-fit bg-darkgreen p-3 justify-between sticky top-0 z-50">
+        <nav className="flex w-full min-h-fit bg-darkgreen p-3 justify-between absolute top-0 z-50">
           <Link to="/">
             <div className="flex items-center justify-between">
               <img
