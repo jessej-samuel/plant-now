@@ -4,10 +4,11 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Users from "./components/Users";
 import User from "./components/User";
-import { useDispatch } from "react-redux";
 // Redux stuff
+import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import { selectSong } from "./actions";
+
 function App({ songs }) {
   const dispatcher = useDispatch();
   return (
