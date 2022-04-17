@@ -1,23 +1,45 @@
 import { combineReducers } from 'redux';
 
-const songsReducer = () => {
-  return [
-    { title: 'No Scrubs', duration: '4:05' },
-    { title: 'Macarena', duration: '2:30' },
-    { title: 'All Star', duration: '3:15' },
-    { title: 'I Want it That Way', duration: '1:45' }
-  ];
+// Create reducers for name, email and password
+const nameReducer = (state = '', action) => {
+  switch (action.type) {
+    case 'CHANGE_NAME':
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
-const selectedSongReducer = (selectedSong = null, action) => {
-  if (action.type === 'SONG_SELECTED') {
-    return action.payload;
+const emailReducer = (state = '', action) => {
+  switch (action.type) {
+    case 'CHANGE_EMAIL':
+      return action.payload;
+    default:
+      return state;
   }
+};
 
-  return selectedSong;
+const passwordReducer = (state = '', action) => {
+  switch (action.type) {
+    case 'CHANGE_PASSWORD':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+const login = (state = {}, action) => {
+  switch (action.type) {
+    case 'LOGIN':
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
 export default combineReducers({
-  songs: songsReducer,
-  selectedSong: selectedSongReducer
+  name: nameReducer,
+  email: emailReducer,
+  password: passwordReducer,
+  login: login,
 });

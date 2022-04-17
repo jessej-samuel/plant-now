@@ -2,12 +2,12 @@ import "./App.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import Users from "./components/Users";
+// import Users from "./components/Users";
 import User from "./components/User";
 // Redux stuff
 import { useDispatch } from "react-redux";
-import { connect } from "react-redux";
-import { selectSong } from "./actions";
+// import { connect } from "react-redux";
+// import { selectSong } from "./actions";
 
 function App({ songs }) {
   const dispatcher = useDispatch();
@@ -15,7 +15,7 @@ function App({ songs }) {
     <BrowserRouter>
       {/* Navbar */}
       <div>
-        <nav className="flex w-full min-h-fit bg-darkgreen p-3 justify-between absolute top-0 z-50">
+        <nav className="flex w-full min-h-fit bg-darkgreen p-3 justify-between absolute top-0 z-50 flex-wrap">
           <Link to="/">
             <div className="flex items-center justify-between">
               <img
@@ -47,8 +47,8 @@ function App({ songs }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return { song: state.selectedSong, songs: state.songs };
-};
+// const mapStateToProps = (state) => {
+//   return { song: state.selectedSong, songs: state.songs };
+// };
 
-export default connect(mapStateToProps, { selectSong })(App);
+export default App;
