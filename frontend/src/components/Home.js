@@ -1,5 +1,8 @@
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-function Home() {
+import { connect } from 'react-redux';
+import { selectSong } from '../actions';
+
+function Home({song}) {
   return (
     <div className="bg-black top-0 absolute w-full">
       {/* Hero section */}
@@ -13,7 +16,7 @@ function Home() {
         </h1>
       </div>
       {/* About us */}
-      <div className="w-full bg-primary h-fit min-h-[55vh] py-8 flex flex-row justify-center items-center bg-gradient-to-t from-gray-300">
+      <div className="w-full bg-primary h-fit min-h-[55vh] py-8 flex flex-row justify-center items-center bg-gradient-to-t from-gray-300 px-4">
         <div className="grid grid-cols-12 grid-rows-6 w-full h-full max-w-2xl min-h-fit">
           <img
             className="sm:w-10/12 sm:visible drop-shadow-lg sm:rounded-full invisible row-start-1 col-start-1 row-span-4 col-span-4"
@@ -61,4 +64,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home

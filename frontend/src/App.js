@@ -4,7 +4,12 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Users from "./components/Users";
 import User from "./components/User";
-function App() {
+import { useDispatch } from "react-redux";
+// Redux stuff
+import { connect } from "react-redux";
+import { selectSong } from "./actions";
+function App({ songs }) {
+  const dispatcher = useDispatch();
   return (
     <BrowserRouter>
       {/* Navbar */}
@@ -21,6 +26,9 @@ function App() {
           </Link>
           <Link
             to={"/login"}
+            onClick={() =>
+              dispatcher({ type: "SONG_SELECTED", payload: songs })
+            }
             className="bg-yellow px-2 text-sm flex items-center"
           >
             {/* Login ping */}
@@ -38,4 +46,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { song: state.selectedSong, songs: state.songs };
+};
+
+export default connect(mapStateToProps, { selectSong })(App);
